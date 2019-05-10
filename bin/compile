@@ -46,16 +46,6 @@ python -m ensurepip --upgrade | indent
 
 cd $BUILD_DIR
 
-# puts-step "Checking for STATIC_URL"
-# DJANGO_SETTINGS_MODULE=config.settings.production python runscript get_static_url
-
-# puts-step "Replacing base_url in mkdocs.yml"
-# ./utility/set_mkdocs_base_url.sh
-
-# puts-step "Installing pip3 MkDocs"
-# # pip3 install mkdocs
-# pip3 install mkdocs
-
 puts-step "Installing MkDocs"
 python -m pip install --quiet mkdocs | indent
 
@@ -68,8 +58,4 @@ else
   exit 1
 fi
 
-# mkdocs build -f $CONFIG_FILE | indent
-
 mkdocs build -c -d $BUILD_DIR/public -f $CONFIG_FILE | indent
-
-echo ls -la $BUILD_DIR/public

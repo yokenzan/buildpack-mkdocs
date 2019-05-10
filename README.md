@@ -1,5 +1,9 @@
-# MKDocs Buildpack for Django
+# MKdocs builder && Static runner
 
-Takes into account `STATIC_URL`.
+```bash
+# Heroku:
+heroku config:set BUILDPACK_URL=https://github.com/anerhan/buildpack-mkdocs
+heroku config:set BUILDPACK_URL=https://github.com/heroku/heroku-buildpack-static.git
+```
 
-Adapted from <https://github.com/waldocollective/buildpack-mkdocs>
+- Works Only together with ```https://github.com/heroku/heroku-buildpack-static.git```
